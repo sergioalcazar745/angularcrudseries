@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="my-5">Modificar</h1>
+    <form>
+        <div class="mt-3">
+            <label>Personajes</label>
+            <select name="selectpersonajes" #selectpersonajes (change)="changePersonaje()">
+                <option *ngFor="let personaje of personajes" value="{{personaje.idPersonaje}}">
+                    {{personaje.nombre}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-3">
+            <label>Series</label>
+            <select name="selectseries" #selectseries (change)="changeSerie()">
+                <option *ngFor="let serie of series" value="{{serie.idSerie}}">
+                    {{serie.nombre}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success mt-3">Modificar personaje</button>
+    </form>
+    <div *ngIf="personaje">
+        <h1>{{personaje.nombre}}</h1>
+        <img src="{{personaje.imagen}}"/>
+    </div>
+    <div *ngIf="serie">
+        <h1>{{serie.nombre}}</h1>
+        <img src="{{serie.imagen}}"/>
+    </div>
+</div>

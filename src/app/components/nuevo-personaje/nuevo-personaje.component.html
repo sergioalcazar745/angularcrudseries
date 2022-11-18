@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="my-5">Nuevo personaje</h1>
+    <form (ngSubmit)="postPersonaje()">
+        <div class="mt-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" #cajanombre name="cajanombre" class="form-control"/>
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Imagen</label>
+            <input type="text" #cajaimagen name="cajaimagen" class="form-control"/>
+        </div>
+        <div class="mt-3">
+            <label>Serie</label>
+            <select #selectserie name="selectserie" class="form-select">
+                <option *ngFor="let serie of series" value="{{serie.idSerie}}">
+                    {{serie.nombre}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success mt-3">Crear personaje</button>
+    </form>
+</div>

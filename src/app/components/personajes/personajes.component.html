@@ -1,0 +1,16 @@
+<div class="container">
+    <h1 class="my-5">Personajes</h1>
+    <table class="table table-dark" *ngIf="personajes">
+        <thead>
+            <th>Nombre</th>
+            <th>Imagen</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let personaje of personajes">
+                <td>{{personaje.nombre}}</td>
+                <td><img src="{{personaje.imagen}}" width="150"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <a [routerLink]="['/serie', id]" class="btn btn-danger">Volver</a>
+</div>
